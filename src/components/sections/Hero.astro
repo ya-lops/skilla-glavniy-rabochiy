@@ -14,33 +14,39 @@ import { getGlobalMinPriceWithDiscount, getDiscountPercent } from "@/utils/price
 
 const discount = getDiscountPercent(brandData.main.adv_price_percent);
 
-const { price, discountedPrice, showDiscount } = getGlobalMinPriceWithDiscount(
-  brandData.services,
-  discount,
-);
+const { price, discountedPrice, showDiscount } = getGlobalMinPriceWithDiscount(brandData.services, discount);
 
 const firstServiceUrl = brandData.services[0].url.toLowerCase();
 ---
 
 {
   type == "main" && (
-    <section class="hero grid grid-cols-[100%] min-h-[650px] bg-hero-main-surface text-hero-main-text overflow-clip" data-cmp="Hero">
-      <div class="container h-full">
-        <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center h-full py-8">
-          <div class="_hero-image">
-            <img class="" src="/images/hero-main.webp" alt="" fetchpriority="high" />
-          </div>
+    <section class="hero grid grid-cols-[100%]  bg-hero-main-surface text-hero-main-text overflow-clip" data-cmp="Hero">
+      <div class="container py-20">
+        <div class="_hero-inner grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-3 lg:gap-6 items-stretch h-full min-h-[565px] ">
+          <div class="_hero-content relative flex flex-col gap-10 p-8 lg:p-15 rounded-3xl lg:rounded-[60px] bg-surface-primary-inverse">
+            <h1 class="_hero-title typo-h1 text-left text-balance">
+              Рабочий персонал под любые задачи
+            </h1>
 
-          <div class="_hero-content flex flex-col gap-10">
-            <h1 class="_hero-title typo-h1 text-left text-balance">Работники для любых задач от {showDiscount ? discountedPrice : price} руб.</h1>
-
-            <HeroFeatures />
+            <p class="typo-t3">
+              Закрываем потребности на любом объекте:<br>
+              склады, производство, ритейл и многое другое.
+            </p>
 
             <div class="_hero-actions flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-8">
               <div class="_hero-actions-items">
                 <Button href="#contact" variant="accent" text="Получить КП" />
               </div>
             </div>
+
+            <div class="absolute right-0 lg:top-15 lg:right-0 lg:translate-x-[50%]">
+              <HeroFeatures />
+            </div>
+          </div>
+
+          <div class="flex items-end rounded-3xl lg:rounded-[60px] bg-surface-secondary overflow-clip">
+            <img class="" src="/images/hero-main.webp" alt="" fetchpriority="high" />
           </div>
         </div>
       </div>

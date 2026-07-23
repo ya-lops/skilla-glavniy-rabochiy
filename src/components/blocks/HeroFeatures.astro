@@ -1,32 +1,27 @@
 ---
-const features = [
-  {
-    text: "Низкие цены",
-  },
-  {
-    text: "Трезвые рабочие в течение 1 часа",
-  },
-  {
-    text: "Фиксированная стоимость",
-  },
-  {
-    text: "Отсрочка при крупных заказах",
-  },
-  {
-    text: "26 офисов в России и СНГ",
-  },
-];
+import IconSvg from "../IconSvg.astro";
+
+
 ---
 
-<section data-cmp="HeroFeatures">
-  <ul>
-    {
-      features.map((feature) => (
-        <li class="typo-t2 flex items-center gap-3 mb-2">
-          <span class="w-2 h-2 shrink-0 rounded-full bg-button-surface-accent-inverse"></span>
-          <span set:html={feature.text} />
-        </li>
-      ))
-    }
-  </ul>
+<section class="flex flex-col items-center gap-6" data-cmp="HeroFeatures">
+  <div class="inline-flex items-center gap-2.5 p-3 rounded-2xl bg-text-primary-inverse rotate-[-7.25deg] translate-x-[10%]">
+    <IconSvg name="24" class="text-button-surface-accent"/>
+    <span class="typo-t4 text-text-secondary">Круглосуточно<br>выполняем заказы</span>
+  </div>
+
+  <div class="inline-flex items-center gap-2.5 p-3 rounded-2xl bg-text-primary-inverse rotate-[3.9deg]">
+    <IconSvg name="doc" class="text-button-surface-accent"/>
+    <span class="typo-t4 text-text-secondary">Работаем<br>по договору</span>
+  </div>
+
+  <div class="inline-flex items-center gap-2.5 p-3 rounded-2xl bg-text-primary-inverse rotate-[-2.99deg] translate-x-[-10%]">
+    <IconSvg name="card" class="text-button-surface-accent"/>
+    <span class="typo-t4 text-text-secondary">Рассрочка при<br>крупных заказах</span>
+  </div>
+
+  <div class="inline-flex items-center gap-2.5 p-3 rounded-2xl bg-text-primary-inverse rotate-[-8.45deg]">
+    <IconSvg name="calendar" class="text-button-surface-accent"/>
+    <span class="typo-t4 text-text-secondary">15 лет<br>на рынке</span>
+  </div>
 </section>

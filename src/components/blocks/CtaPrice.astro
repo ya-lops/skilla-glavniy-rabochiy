@@ -28,8 +28,7 @@ const { price, discountedPrice, showDiscount } = getGlobalMinPriceWithDiscount(
     <div class="_price mt-6">
       <span class="typo-t1">от</span>
       <span class="typo-h3">
-        {showDiscount ? discountedPrice : price}
-        <span class="text-xs lg:text-2xl">₽</span>
+        {showDiscount ? discountedPrice : price} руб.
       </span>
     </div>
   </div>
@@ -41,6 +40,6 @@ const { price, discountedPrice, showDiscount } = getGlobalMinPriceWithDiscount(
 
     <Button class="w-full lg:w-auto" href="#contact" variant="accent" text="Позвонить" />
 
-    <BlockMessengersLinks class="text-text-secondary" {brandData} />
+    <BlockMessengersLinks class="text-text-secondary-inverse" {brandData} />
   </div>
 </section>

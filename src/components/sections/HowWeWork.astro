@@ -51,7 +51,7 @@ const stepsIcons = [
 ];
 ---
 
-<section class="how-we-work py-8 md:py-10 lg:py-20 bg-surface-secondary" data-cmp="HowWeWork">
+<section class="how-we-work py-8 md:py-10 lg:py-20" data-cmp="HowWeWork">
   <div class="container">
     <div class="_how-we-work-inner">
       <h2 class="_how-we-work-title pb-16">Как мы работаем</h2>
@@ -79,7 +79,7 @@ const stepsIcons = [
 
       {
         type == "timeline" && (
-          <div class="_how-we-work-grid grid grid-cols-1 lg:grid-cols-4 items-start gap-6">
+          <div class="_how-we-work-grid grid grid-cols-1 lg:grid-cols-4 items-start gap-6 bg-surface-secondary p-10 rounded-[40px]">
             {stepsIcons.map((step: any, index: number) => (
               <div class="_how-we-work_step grid grid-cols-[1fr_auto_84px] lg:grid-cols-1 items-start gap-3 lg:gap-7">
                 <div class="flex shrink-0 order-last lg:order-1">
