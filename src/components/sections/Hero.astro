@@ -22,25 +22,24 @@ const firstServiceUrl = brandData.services[0].url.toLowerCase();
 {
   type == "main" && (
     <section class="hero grid grid-cols-[100%]  bg-hero-main-surface text-hero-main-text overflow-clip" data-cmp="Hero">
-      <div class="container py-20">
+      <div class="container py-5 lg:py-20">
         <div class="_hero-inner grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-3 lg:gap-6 items-stretch h-full min-h-[565px] ">
           <div class="_hero-content relative flex flex-col gap-10 p-8 lg:p-15 rounded-3xl lg:rounded-[60px] bg-surface-primary-inverse">
-            <h1 class="_hero-title typo-h1 text-left text-balance">
-              Рабочий персонал под любые задачи
-            </h1>
+            <h1 class="_hero-title typo-h1 text-left text-balance">Рабочий персонал под любые задачи</h1>
 
             <p class="typo-t3">
-              Закрываем потребности на любом объекте:<br>
+              Закрываем потребности на любом объекте:
+              <br />
               склады, производство, ритейл и многое другое.
             </p>
 
-            <div class="_hero-actions flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-8">
+            <div class="_hero-actions flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-8 mb-10 lg:mb-0">
               <div class="_hero-actions-items">
-                <Button href="#contact" variant="accent" text="Получить КП" />
+                <Button href="#kp" variant="accent" text="Получить КП" />
               </div>
             </div>
 
-            <div class="absolute right-0 lg:top-15 lg:right-0 lg:translate-x-[50%]">
+            <div class="absolute top-[90%] inset-x-0 lg:inset-auto lg:left-auto lg:top-15 lg:right-0 lg:translate-x-[50%]">
               <HeroFeatures />
             </div>
           </div>
@@ -61,13 +60,14 @@ const firstServiceUrl = brandData.services[0].url.toLowerCase();
       data-cmp="Hero"
     >
       <div class="container h-full">
-        <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center h-full">
+        <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-[4fr_3fr] items-center lg:items-center h-full">
           <div class="_hero-content flex flex-col gap-10 py-8">
-            <h1 class="_hero-title typo-h1 text-left text-balance isolate">
-              Рабочий Экспресс выполнил <span class="whitespace-nowrap">87 000</span> заказов за 10 лет работы
-            </h1>
+            <h1 class="_hero-title typo-h1 text-left text-balance isolate">Успешно предоставляем персонал с 2010 года</h1>
 
-            <p>98.4% клиентов оценили оказанные им услуги на отлично</p>
+            <p class="typo-t3 text-text-secondary max-w-[473px]">
+              Наша компания берет на себя подбор и организацию труда разнорабочих для выполнения задач любой сложности. Гарантируем
+              оперативность, надежность и гибкие условия сотрудничества, чтобы вы могли сосредоточиться на ключевых бизнес-процессах.
+            </p>
 
             <div class="_hero-actions flex items-center gap-8">
               <div class="_hero-actions-items">

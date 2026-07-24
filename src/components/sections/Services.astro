@@ -13,6 +13,8 @@ interface Props {
 
 const { brandData, media = "image" } = Astro.props;
 
+const firstServiceUrl = brandData.services[0].url.toLowerCase();
+
 // Функция для поиска подуслуги с минимальной ценой
 function getMinPriceService(subServices: Array<{ price: string; unit: string; name: string }>) {
   return subServices.reduce((min, current) => (parseFloat(current.price) < parseFloat(min.price) ? current : min));
@@ -22,7 +24,18 @@ function getMinPriceService(subServices: Array<{ price: string; unit: string; na
 const discount = getDiscountPercent(brandData.main.adv_price_percent);
 const showDiscount = hasDiscount(discount);
 
-const serviceIcons = ["office", "cargo", "helmet"];
+// Для первых трех сервисов индивидуальные классы
+const featuredBgClasses = [
+  "bg-[#ebe3dc] text-text-primary",
+  "bg-[#ececec] text-text-primary",
+  "bg-[#413f4a] text-text-primary-inverse",
+];
+
+const featuredDescriptionClasses = [
+  "bg-[#ebe3dc] text-text-primary",
+  "bg-[#ececec] text-text-primary",
+  "bg-[#413f4a] text-text-primary-inverse",
+];
 ---
 
 <section class="services py-8 md:py-10 lg:py-20" data-cmp="Services">
@@ -32,6 +45,7 @@ const serviceIcons = ["office", "cargo", "helmet"];
       {
         brandData.services
           .filter((service) => service.is_active === 1)
+          .slice(0, 7)
           .map((service, index) => {
             const minService = getMinPriceService(service.services);
             const discountedPrice = getDiscountedPrice(minService.price, discount);
@@ -40,9 +54,9 @@ const serviceIcons = ["office", "cargo", "helmet"];
             return (
               <div
                 class:list={[
-                  "_service-card flex flex-col items-center px-6 rounded-xl text-center",
+                  "_service-card flex flex-col items-center px-6 rounded-xl lg:rounded-3xl lg:rounded-[40px] text-center",
                   isFeatured
-                    ? "pt-6 lg:pt-12 col-span-1 sm:col-span-2 lg:col-span-4 bg-surface-primary-inverse text-text-primary-inverse"
+                    ? `pt-6 lg:pt-12 col-span-1 sm:col-span-2 lg:col-span-4 ${featuredBgClasses[index] || ""}`
                     : "py-12 col-span-1 sm:col-span-1 lg:col-span-3 bg-surface-secondary text-text-primary",
                 ]}
               >
@@ -50,7 +64,7 @@ const serviceIcons = ["office", "cargo", "helmet"];
 
                 <h3 class="_service-card-title mb-6 typo-h4">{service.name}</h3>
                 <p
-                  class:list={["_service-card-description mb-8 typo-t3", isFeatured ? "text-text-secondary-inverse" : "text-text-primary"]}
+                  class:list={["_service-card-description mb-8 typo-t3"]}
                 >
                   {service.description}
                 </p>
@@ -58,30 +72,30 @@ const serviceIcons = ["office", "cargo", "helmet"];
                 <Button
                   href={`/${service.url.toLowerCase()}`}
                   class="mt-auto not-last:mb-12"
-                  variant="primary"
-                  inverse={isFeatured}
+                  variant={isFeatured ? 'secondary' : 'primary'}
+                  inverse={isFeatured && index==2}
                   arrow="right"
-                  text={`от ${discountedPrice} руб.`}
+                  text={`от ${discountedPrice} ₽`}
                 />
 
                 {isFeatured && (
                   <div class="_service-card-image mt-auto w-full aspect-video rounded-lg">
-                    {media === "icon" ? (
-                      <IconService name={serviceIcons[index]} class="w-full h-full" />
-                    ) : (
-                      <img
-                        src={service.image || `/images/service-${index + 1}.webp`}
-                        alt={`Изображение для услуги ${service.name}`}
-                        class="w-full h-full object-cover rounded-lg"
-                        loading="lazy"
-                      />
-                    )}
+                    <img
+                      src={service.image || `/images/service-${index + 1}.webp`}
+                      alt={`Изображение для услуги ${service.name}`}
+                      class="w-full h-full object-cover rounded-lg"
+                      loading="lazy"
+                    />
                   </div>
                 )}
               </div>
             );
           })
       }
+    </div>
+
+    <div class="flex items-center justify-center gap-4 mt-16">
+      <Button href={firstServiceUrl} variant="secondary" text="Все услуги" arrow="right" />
     </div>
   </div>
 </section>

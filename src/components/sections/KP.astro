@@ -9,14 +9,14 @@ interface Props {
 const { brandData } = Astro.props;
 ---
 
-<section class="py-20 overflow-clip" data-cmp="KP">
-  <div class="container py-15 px-25 bg-kp-surface rounded-[40px]">
+<section id="kp" class="py-20 overflow-clip scroll-mt-[100px]" data-cmp="KP">
+  <div class="container p-6 lg:py-15 lg:px-25 bg-kp-surface rounded-3xl lg:rounded-[40px]">
     <div class="grid grid-cols-1 xl:grid-cols-[334px_1fr] gap-3 lg:gap-15">
-      <div class="self-center">
+      <div class="self-center max-w-[100px] lg:max-w-max">
         <img class="pointer-events-none" src="/images/kp-image.webp" alt="" loading="lazy" />
       </div>
 
-      <div class="grid grid-cols-[1fr_365px] gap-12 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_365px] gap-12 items-start">
         <h2 class="text-left typo-h3 text-kp-text *:text-kp-text-accent *:not-italic">
           Бесплатно <em>сделаем</em> коммерческое предложение <em>индивидуально под ваши потребности</em>
         </h2>

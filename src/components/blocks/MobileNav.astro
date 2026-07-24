@@ -66,7 +66,7 @@ const { brandData, links } = Astro.props;
     <div class="py-5 px-4">
       <img
         class="max-h-8 lg:max-h-12.5 w-auto"
-        src={brandData.default.logo || "/images/logo-main.webp"}
+        src={brandData.default.logo || "/images/logo-main-footer.webp"}
         alt={`Логотип компании ${brandData.default?.name}`}
       />
     </div>
@@ -98,7 +98,10 @@ const { brandData, links } = Astro.props;
       </div>
 
       <div class="grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] gap-4 items-center">
-        <Button href="#personal" text="Личный кабинет" variant="secondary" inverse />
+        {/* Условие для отображения личного кабинета, нужно брать из админки */}
+        {/* сейчас просто написано чтото рандомное */}
+        {/* в SiteHeader.astro тоже */}
+        {brandData.main?.showPersonal && <Button href="#personal" text="Личный кабинет" variant="secondary" inverse />}
         <Button href="#contact" text="Позвонить" variant="primary" inverse />
       </div>
     </div>
