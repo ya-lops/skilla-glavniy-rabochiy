@@ -3,10 +3,9 @@
 @import "./theme.css";
 
 :root {
-  --site-font-base: 'Mulish', sans-serif;
-  --site-font-heading: 'Manrope', sans-serif;
+  --site-font-base: "Mulish", sans-serif;
+  --site-font-heading: "Manrope", sans-serif;
 }
-
 
 @utility font-base {
   font-family: var(--site-font-base);
@@ -14,6 +13,11 @@
 
 @utility font-heading {
   font-family: var(--site-font-heading);
+}
+
+@utility text-trim {
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
 }
 
 /* ===== HEADLINE (fluid, 375px → 1440px) ===== */
