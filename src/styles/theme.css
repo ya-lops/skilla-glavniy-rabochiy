@@ -77,26 +77,27 @@
   --color-table-yes-accent: var(--color-button-surface-accent);
   --color-table-no: var(--color-text-tertiary);
 
-
-
-
   --color-button-accent-surface: var(--color-button-surface-accent);
   --color-button-accent-text: var(--color-text-primary-inverse);
   --color-button-accent-border: var(--color-button-surface-accent);
-  --color-button-accent-surface_hover: var(--color-button-surface-accent-inverse);
+  --color-button-accent-surface_hover: var(
+    --color-button-surface-accent-inverse
+  );
   --color-button-accent-text_hover: var(--color-text-primary-inverse);
-  --color-button-accent-border_hover: var(--color-button-surface-accent-inverse);
+  --color-button-accent-border_hover: var(
+    --color-button-surface-accent-inverse
+  );
 
   --color-button-accent-inverse-surface: var(--color-button-surface-accent);
   --color-button-accent-inverse-text: var(--color-text-primary-inverse);
   --color-button-accent-inverse-border: var(--color-button-surface-accent);
-  --color-button-accent-inverse-surface_hover: var(--color-button-surface-accent-inverse);
+  --color-button-accent-inverse-surface_hover: var(
+    --color-button-surface-accent-inverse
+  );
   --color-button-accent-inverse-text_hover: var(--color-text-primary-inverse);
-  --color-button-accent-inverse-border_hover: var(--color-button-surface-accent-inverse);
-
-
-
-
+  --color-button-accent-inverse-border_hover: var(
+    --color-button-surface-accent-inverse
+  );
 
   --color-button-primary-surface: var(--color-button-surface-primary);
   --color-button-primary-text: var(--color-text-primary-inverse);
@@ -105,14 +106,16 @@
   --color-button-primary-text_hover: var(--color-text-primary-inverse);
   --color-button-primary-border_hover: var(--color-button-surface-accent);
 
-  --color-button-primary-inverse-surface: var(--color-surface-primary)
+  --color-button-primary-inverse-surface: var(--color-surface-primary);
   --color-button-primary-inverse-text: var(--color-text-primary);
-  --color-button-primary-inverse-border: var(--color-surface-primary)
-  --color-button-primary-inverse-surface_hover: var(--color-button-surface-accent);
+  --color-button-primary-inverse-border: var(--color-surface-primary);
+  --color-button-primary-inverse-surface_hover: var(
+    --color-button-surface-accent
+  );
   --color-button-primary-inverse-text_hover: var(--color-text-primary-inverse);
-  --color-button-primary-inverse-border_hover: var(--color-button-surface-accent);
-
-
+  --color-button-primary-inverse-border_hover: var(
+    --color-button-surface-accent
+  );
 
   --color-button-secondary-surface: transparent;
   --color-button-secondary-text: var(--color-text-primary);
